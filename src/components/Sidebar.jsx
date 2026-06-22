@@ -1,9 +1,11 @@
 import { css } from '../css.js'
 import { useApp } from '../AppContext.js'
+import { useAuth } from '../store/auth.js'
 import { navGroups } from '../data.js'
 
 export default function Sidebar() {
   const { screen, go } = useApp()
+  const logout = useAuth((s) => s.logout)
 
   const navStyle = (k) => {
     const a = screen === k
@@ -45,6 +47,7 @@ export default function Sidebar() {
           <div style={{ fontSize: 10.5, color: '#8a8c84' }}>Engineering Technologist</div>
         </div>
         <div title="On shift" style={{ marginLeft: 'auto', width: 8, height: 8, borderRadius: '50%', background: '#186e3a', flex: 'none' }} />
+        <button onClick={logout} title="Sign out" style={{ width: 28, height: 28, borderRadius: 7, background: '#f4f3ee', border: '1px solid #e4e2da', cursor: 'pointer', fontSize: 13, color: '#6a6c64', display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none' }}>⏻</button>
       </div>
     </aside>
   )

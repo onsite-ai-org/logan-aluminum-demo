@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { AppContext } from './AppContext.js'
 import { titles } from './data.js'
+import { useAuth } from './store/auth.js'
+import Login from './screens/Login.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import Topbar from './components/Topbar.jsx'
 import SourceSlideOver from './components/SourceSlideOver.jsx'
@@ -27,6 +29,7 @@ const SCREENS = {
 }
 
 export default function App() {
+  const authed = useAuth((s) => s.authed)
   const [screen, setScreen] = useState('dashboard')
   const [paletteOpen, setPaletteOpen] = useState(false)
   const [paletteQuery, setPaletteQuery] = useState('')
@@ -79,6 +82,8 @@ export default function App() {
       showLabels, toggleLabels, activeDefect, openInViewer])
 
   const Screen = SCREENS[screen] || Dashboard
+
+  if (!authed) return <Login />
 
   return (
     <AppContext.Provider value={ctx}>
