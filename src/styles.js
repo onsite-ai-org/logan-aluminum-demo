@@ -1,0 +1,5 @@
+// Shared inline-style strings reused across screens (ported verbatim from the design).
+export const citeBtn = "display:inline-flex;align-items:center;gap:3px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:#1e5fa4;background:#eaf1f8;border:1px solid #cfe0f0;border-radius:5px;padding:0 6px;margin:0 1px;cursor:pointer;vertical-align:baseline;line-height:1.7;"
+export const citeBtnInline = "display:inline-flex;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;color:#1e5fa4;background:#eaf1f8;border:1px solid #cfe0f0;border-radius:4px;padding:0 5px;cursor:pointer;line-height:1.6;"
+export const srcChip = "font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;color:#3a3f47;background:#fff;border:1px solid #e4e2da;border-radius:6px;padding:4px 9px;cursor:pointer;"
+export const ghostBtn = "font-size:12px;font-weight:500;color:#0e5436;background:#fff;border:1px solid #cfe0d6;border-radius:8px;padding:7px 12px;cursor:pointer;font-family:inherit;"
