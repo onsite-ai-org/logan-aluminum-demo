@@ -20,7 +20,7 @@ npm run preview  # serve the production build locally
 
 ## Deploy (GitHub Pages)
 
-Pushing to `main` runs `.github/workflows/deploy.yml`, which builds the site and
+Pushing to `master` runs `.github/workflows/deploy.yml`, which builds the site and
 publishes `dist/` to GitHub Pages. The site is served at:
 
 ```
