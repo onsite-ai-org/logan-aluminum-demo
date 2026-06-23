@@ -11,10 +11,12 @@ export const useAuth = create(
   persist(
     (set) => ({
       authed: false,
-      // returns true on success so the form can show an error on failure
+      // returns true on success so the form can show an error on failure.
+      // trim() so a pasted value with a trailing newline / stray whitespace
+      // (common from password managers or copied text) still matches.
       login: (password) => {
         let ok = false
-        try { ok = btoa(password) === SECRET } catch { ok = false }
+        try { ok = btoa(String(password).trim()) === SECRET } catch { ok = false }
         if (ok) set({ authed: true })
         return ok
       },
